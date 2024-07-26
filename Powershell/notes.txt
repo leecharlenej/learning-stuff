@@ -1,0 +1,20 @@
+Check version of Powershell: get-host
+
+Update local help files: update-help
+Run as administrator.
+
+Get help for a particular command: get-help <command>
+
+To count number of modules installed on machine: (get-command).count
+
+To filter commands with word 'service': get-command *service*
+get-command *-service*
+(get-command *-service*).count
+get-help get-service
+
+To filter commands based on modules: get-command -module <module name>
+
+Gets all commands in current version: get-command
+
+To filter based on parameters: get-command -ParameterName <name>
+get-command *service* -ParameterName ComputerName
