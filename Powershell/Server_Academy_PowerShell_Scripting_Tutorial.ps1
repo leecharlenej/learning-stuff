@@ -61,3 +61,22 @@ for ($i = 1; $i -le 10; $i++) {
 $prefix = Read-Host -Prompt "What would you like your folder prefix to be?"
 $count = Read-Host -Prompt "How many folders would you like to create?"
 
+for ($i = 1; $i -le $count; $i++) {
+    Write-Progress -Activity "Coutning to 100" -Status "$i% Complete ($i / $)" -PercentComplete $i
+    mkdir -Path "$($prefix)$($i)"
+}
+
+# -------------------- CSV
+
+$csv = Import-csv -Path "C:\test\NewUsers.csv"
+
+$csv | ogv # To view CSV in a Window
+
+foreach ($line in $csv) {
+    Write-Host "Creating folders for $($line. 'First Name' ) $($line.'Email Address')"
+
+    # Create folders for user
+    for ($i = 1; $i -le 5; $i++) {
+        mkdir -Path "S(Sline.'Last Name')_$i"
+    }
+}
