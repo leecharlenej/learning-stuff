@@ -4,3 +4,7 @@ Learning Git bash.
 
 Learning Powershell.
 - Server Academy: https://www.youtube.com/watch?v=nKhcJ6xcPe8&t=1776s
+
+Learning Python.
+- Whatsapp: https://www.youtube.com/watch?v=MQQTABNMZCE
+- Automate with Python: https://www.youtube.com/watch?v=PXMJ6FS7llk

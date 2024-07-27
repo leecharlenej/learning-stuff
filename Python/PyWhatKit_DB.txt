@@ -1,0 +1,40 @@
+Date: 27/7/2024
+Time: 16:36
+Phone Number: +6597710074
+Message: Test
+--------------------
+Date: 27/7/2024
+Time: 16:39
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 16:41
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 16:46
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 16:48
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 16:49
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 17:6
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
+Date: 27/7/2024
+Time: 18:56
+Phone Number: +6596447830
+Message: Sent with Python script.
+--------------------
