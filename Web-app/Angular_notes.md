@@ -52,4 +52,17 @@ Note that the versions I am using are:
 1. To create a new component: `ng g c header --skip-tests` or `ng generate component`
 - By default, a test file will be generated as well. Skip this if it is a static file.
 
-2.  Add to app.component.html: `<componentName></componentName>`
+2.  Add to **app.component.html**: `<componentName></componentName>`
+
+3. To add routing to website: Add `<router-outlet></router-outlet>` to **app.component.html**.
+
+4. To configure routing to different components: **app-routing.module.ts**
+- Import component and add to `Routes` list.
+- To check if they are working: `/<componentName` in browser.
+
+## Missing assets folder
+1. assets folder has been replaced with public folder in new Angular version.
+
+2. To use an image: Create an image folder in public folder (optional) and use `<img src="<imageName>.jpeg">`
+
+
