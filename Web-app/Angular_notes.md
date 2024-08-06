@@ -73,8 +73,11 @@ The same component template can be used repeatedly, as in the case of the _proje
 1. Go to folder _app_, create folder __modals_ and file _project.ts_.
 2. Go to file _project.ts_, add interface and accompanying properties (Strings, arrays etc.) for the variable data.
 3. Go to _project-card.components.ts_, add the interface.
-4. Go to _project-card.component.html_, add in all variable data names.
-- For arrays, use _ngFor_.
+4. Go to _project-card.component.html_, replace hard-coded values with variable data names.
+- For arrays, use _ngFor_. Remember to use _{{}}_.
+5. Go to _portfolio.component.ts_ and add a project with its details.
+6. Go to _porfolio.component.html_ and add this project. Project cards now display the data supplied by portfolio component.
+7. For arrays, enum can only be defined by primitive data types like strings. Tags come with colours, hence create a modal for it. Remember to add Tag modal to _project.ts_, _portfolio.component.ts_ and _project-card.component.html_ (Angular data binding: Overwrites default value with data it is bounded to dynamically. ).
 
 <a id="codingtips"></a>
 ## Coding tips

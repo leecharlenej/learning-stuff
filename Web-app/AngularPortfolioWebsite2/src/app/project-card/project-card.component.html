@@ -9,7 +9,7 @@
     <div class = "card-footer">
         <div class="d-flex flex-wrap justify-content-center">
             <div *ngFor="let tag of project.tags">
-                <div class="tag mx-2 mb-1">tag</div>
+                <div class="tag mx-2 mb-1" [style.backgroundColor] = 'tag.color'>{{tag}}</div>
             </div>
         </div>
     </div>
