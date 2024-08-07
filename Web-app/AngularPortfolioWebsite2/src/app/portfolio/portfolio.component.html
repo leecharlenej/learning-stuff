@@ -5,7 +5,7 @@
         <!-- Filter button -->
         <div>
             <button class="btn btn-outline-primary mb-2 m-2" (click)="IsCollapsed = !IsCollapsed">filter</button>
-            <button class="btn btn-outline-secondary mb-2 m-2" (click)="ResetFilters()">Reset</button>
+            <button class="btn btn-outline-secondary mb-2 m-2" (click)="ResetFilters()" [hidden]="!filtering">Reset</button>
         </div>
 
         <!-- Filters -->
