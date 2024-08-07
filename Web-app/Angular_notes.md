@@ -12,8 +12,9 @@ Note that the versions I am using are:
 3. [Bootstrap](#bootstrap)
 4. [Angular components](#angularcomponents)
 5. [Angular variable components](#angularvarcomponents)
-6. [Coding Tips](#codingtips)
-7. [Troubleshoot](#troubleshoot)
+6. [Setting up service](#settingupservice)
+7. [Coding Tips](#codingtips)
+8. [Troubleshoot](#troubleshoot)
 ---
 <a id="settingupenv"></a>
 ## Setting up environment
@@ -78,6 +79,16 @@ The same component template can be used repeatedly, as in the case of the _proje
 5. Go to _portfolio.component.ts_ and add a project with its details.
 6. Go to _porfolio.component.html_ and add this project. Project cards now display the data supplied by portfolio component.
 7. For arrays, enum can only be defined by primitive data types like strings. Tags come with colours, hence create a modal for it. Remember to add Tag modal to _project.ts_, _portfolio.component.ts_ and _project-card.component.html_ (Angular data binding: Overwrites default value with data it is bounded to dynamically. ).
+
+<a id="settingupservice"></a>
+## Setting up service
+Service provides the same set of functionality to any components. It is usually used to fetch data from API endpoints and then, supplied to components.
+1. Variable data (projects) only exist in porfolio component and cannot be accessed by other components. Hence, the need to set up a service.
+2. To create a service, go to folder _services_, open up a terminal and `ng g s projects --skip-tests`.
+- Different from a component; no associated HTML and CSS files. Class is an injectable.
+3. Go to _projects.service.ts_ to create database of projects and the accompanying methods.
+4. To use service, go to component, add in to constructor and implement Oninit interface.
+5. Edit the HTML file.
 
 <a id="codingtips"></a>
 ## Coding tips
