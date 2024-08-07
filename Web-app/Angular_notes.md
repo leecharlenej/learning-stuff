@@ -13,8 +13,12 @@ Note that the versions I am using are:
 4. [Angular components](#angularcomponents)
 5. [Angular variable components](#angularvarcomponents)
 6. [Setting up service](#settingupservice)
-7. [Coding Tips](#codingtips)
-8. [Troubleshoot](#troubleshoot)
+7. [Adding modal](#addmodal)
+8. [Adding carousel](#addcarousel)
+9. [Adding filter](#addfilter)
+10. [Coding Tips](#codingtips)
+11. [Troubleshoot](#troubleshoot)
+12. [Reflection](#reflection)
 ---
 <a id="settingupenv"></a>
 ## Setting up environment
@@ -81,7 +85,7 @@ The same component template can be used repeatedly, as in the case of the _proje
 7. For arrays, enum can only be defined by primitive data types like strings. Tags come with colours, hence create a modal for it. Remember to add Tag modal to _project.ts_, _portfolio.component.ts_ and _project-card.component.html_ (Angular data binding: Overwrites default value with data it is bounded to dynamically. ).
 
 <a id="settingupservice"></a>
-## Setting up service
+## Setting up Service
 Service provides the same set of functionality to any components. It is usually used to fetch data from API endpoints and then, supplied to components.
 1. Variable data (projects) only exist in porfolio component and cannot be accessed by other components. Hence, the need to set up a service.
 2. To create a service, go to folder _services_, open up a terminal and `ng g s projects --skip-tests`.
@@ -89,6 +93,23 @@ Service provides the same set of functionality to any components. It is usually 
 3. Go to _projects.service.ts_ to create database of projects and the accompanying methods.
 4. To use service, go to component, add in to constructor and implement Oninit interface.
 5. Edit the HTML file.
+
+<a id="addmodal"></a>
+## Adding modal
+Modal is a pop-up window that overlays on the side.
+1. Go to _app.module.ts_ and add the modal.
+2. Go to _project-card.component.ts_ to add the modal.
+3. Go to _project-card.component.html_ to add it as a click event.
+4. Create a project-modal component to hold the HTML for the modal. `ng g c project-modal --skip-tests`
+5. project-modal.component.ts to add BsModalRef, project-card.component.ts to add project modal component.
+
+<a id="addcarousel"></a>
+## Adding Carousel
+1. Go to _app.module.ts_ and add the carousel.
+
+<a id="addfilter"></a>
+## Adding filters
+1. Go to _app.module.ts_ and add the carousel.
 
 <a id="codingtips"></a>
 ## Coding tips
@@ -98,13 +119,23 @@ Service provides the same set of functionality to any components. It is usually 
 
 <a id="troubleshoot"></a>
 ## Troubleshoot
-1. **Error:** `\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system.`
+
+1. **Error:** _\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system._
 - **Solution:** Go to `C:\Users\{user_name}\AppData\Roaming\npm`. Delete `ng.ps1`
 
-2. **Error:** `This command is not available when running the Angular CLI outside a workspace.`
+2. **Error:** _This command is not available when running the Angular CLI outside a workspace._
 - **Solution:** Make sure you 'open in integrated terminal'.
 
 3. **Missing:** assets folder has been replaced with public folder in latest Angular version.
 - **Solution:** To refer to an image, use `<img src="<imageName>.jpeg">`
+
+4. **Error:** _Error: Cannot resolve type entity i4.FocusTrapModule to symbol_
+- **Solution:** Go to _tsconfig.json_, change to `"compilerOptions": { ... "moduleResolution": "node", ... }`.
+
+5. `ng cache clean`
+
+---
+<a id="reflection"></a>
+## Reflection
 
 

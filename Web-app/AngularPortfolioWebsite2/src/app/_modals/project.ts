@@ -5,7 +5,7 @@ export interface Project {
     name: string;
     summary: string;
     description: string;
-    projectlink: string;
+    projectLink: string;
     pictures: string[];
     tags: Tag[];
 }
