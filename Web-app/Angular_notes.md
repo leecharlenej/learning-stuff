@@ -15,8 +15,10 @@ Note that the versions I am using are:
 6. [Setting up service](#settingupservice)
 7. [Adding modal](#addmodal)
 8. [Adding carousel](#addcarousel)
-9. [Coding Tips](#codingtips)
-10. [Troubleshoot](#troubleshoot)
+9. [Adding filter](#addfilter)
+10. [Coding Tips](#codingtips)
+11. [Troubleshoot](#troubleshoot)
+12. [Reflection](#reflection)
 ---
 <a id="settingupenv"></a>
 ## Setting up environment
@@ -105,6 +107,10 @@ Modal is a pop-up window that overlays on the side.
 ## Adding Carousel
 1. Go to _app.module.ts_ and add the carousel.
 
+<a id="addfilter"></a>
+## Adding filters
+1. Go to _app.module.ts_ and add the carousel.
+
 <a id="codingtips"></a>
 ## Coding tips
 1. `{{}}`: To insert data from a variable in component file into HTML.
@@ -127,5 +133,9 @@ Modal is a pop-up window that overlays on the side.
 - **Solution:** Go to _tsconfig.json_, change to `"compilerOptions": { ... "moduleResolution": "node", ... }`.
 
 5. `ng cache clean`
+
+---
+<a id="reflection"></a>
+## Reflection
 
 
