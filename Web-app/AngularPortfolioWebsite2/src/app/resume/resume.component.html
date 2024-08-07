@@ -1,1 +1,100 @@
-<p>resume works!</p>
+<div class="container text-center">
+    <button (click)= "DownloadFile()" class=" btn btn-primary mb-23 shadow border">Download PDF Resume</button>
+
+    <p></p>
+
+    <div class="pb-2">
+        <accordion [isAnimated]="true" class="shadow">
+
+            <!-- Work experience -->
+            <accordion-group [(isOpen)]="isWorkExperienceOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Work Experience</div>
+                    <div style="width: 10.9px">
+                        <div *ngIf="!isWorkExperienceOpen" style="color: white;">> </div>
+                        <div *ngIf="isWorkExperienceOpen" style="color: white;">v </div>
+                    </div>
+
+                </button>
+
+                <div style="text-align:left;">
+                    <h3 class="mt-o">Intern</h3>
+                    <h4 class="text-primary">National Cybersecurity R&D Lab</h4>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <hr>
+                <div style="text-align:left;">
+                    <h3 class="mt-o">Cybersecurity Engineer</h3>
+                    <h4 class="text-primary">DBS Bank</h4>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                
+    
+            </accordion-group>
+
+            <!-- Education -->
+            <accordion-group [(isOpen)]="isEducationOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Education</div>
+                    <div style="width: 10.9px">
+                        <div *ngIf="!isEducationOpen" style="color: white;">> </div>
+                        <div *ngIf="isEducationOpen" style="color: white;">v </div>
+                    </div>
+
+                </button>
+    
+            </accordion-group>
+
+            <!-- Certification -->
+            <accordion-group [(isOpen)]="isCertificationsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Certifications</div>
+                    <div style="width: 10.9px">
+                        <div *ngIf="!isCertificationsOpen" style="color: white;">> </div>
+                        <div *ngIf="isCertificationsOpen" style="color: white;">v </div>
+                    </div>
+                </button>
+    
+            </accordion-group>
+
+            <!-- Skills -->
+            <accordion-group [(isOpen)]="isSkillsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Skills</div>
+                    <div style="width: 10.9px">
+                        <div *ngIf="!isSkillsOpen" style="color: white;">> </div>
+                        <div *ngIf="isSkillsOpen" style="color: white;">v </div>
+                    </div>
+                </button>
+
+                <div class="row" style="text-align: left;">
+                    <div class="col">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+    
+                    <div class="col">
+                        <h3>Other skills:</h3>
+                        <ul>
+                            <li>JLPT N4</li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </accordion-group>
+        </accordion>
+    </div>
+
+    
+</div>
