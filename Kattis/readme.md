@@ -1,1 +1,0 @@
-Following: https://nus.kattis.com/courses/IT5003/IT5003_S1_AY2425
