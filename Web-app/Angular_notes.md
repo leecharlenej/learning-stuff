@@ -173,6 +173,10 @@ During deployment on Github Pages.
 4. **Error:** Images are not showing on Github Page.
 - **Solution:** Remove _/_ at the start of the image URLs.
 
+5. **Error:** Github page displays 404 error after a while.
+- **Solution:** Copy and paste _index.html_ in same repo folder and rename it as _404.html_.
+
+
 ---
 <a id="reflections"></a>
 ## Reflections
