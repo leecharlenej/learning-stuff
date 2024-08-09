@@ -16,9 +16,10 @@ Note that the versions I am using are:
 7. [Adding modal](#addmodal)
 8. [Adding carousel](#addcarousel)
 9. [Adding filter](#addfilter)
+10. [Deploying onto Github pages](#deploygithub)
 10. [Coding Tips](#codingtips)
 11. [Troubleshoot](#troubleshoot)
-12. [Reflection](#reflection)
+12. [Reflections](#reflections)
 ---
 <a id="settingupenv"></a>
 ## Setting up environment
@@ -59,7 +60,7 @@ Note that the versions I am using are:
 | -------- | ------- |
 | To create new component | `ng g c header --skip-tests` or `ng generate component` |
 | To add components to main website | Go to _app.component.html_. > `<componentName></componentName>` |
-| To link to components/ add routing to website | Go to _app.component.html_. > `router-outlet></router-outlet>` |
+| To link to components add routing to website | Go to _app.component.html_. > `<router-outlet></router-outlet>` |
 | To configure routing to different components | Go to _app-routing.module.ts_. > Import component and add to _Routes_ list.
 | To check if component is working | Go to `/<componentName` in browser. |
 
@@ -72,9 +73,9 @@ The same component template can be used repeatedly, as in the case of the _proje
 ### Method 1
 1. Add `<app-project-card></app-project-card>` to _portfolio.component.html_.
 2. Go to _project-card-component.html_ to edit HTML.
-3. To supply different data to the component, use parent-child communication. In this case, parent = _portfolio.component.html_ and child = _app-project-card_ component. Go to _project-card-components.ts_ and use _@Input decorator_. Go to _project-card-component.html_ and use _{{}}_ for variable data with single quotes.
+3. To supply data to the component, use parent-child communication. In this case, parent = _portfolio.component.html_ and child = _app-project-card_ component. Go to _project-card-components.ts_ and use _@Input decorator_. Go to _project-card-component.html_ and use _{{}}_ for variable data with single quotes.
 
-### Method 2: Use Typescript class modal to hold data.
+### Method 2: Use Typescript class modal to hold variable data.
 1. Go to folder _app_, create folder __modals_ and file _project.ts_.
 2. Go to file _project.ts_, add interface and accompanying properties (Strings, arrays etc.) for the variable data.
 3. Go to _project-card.components.ts_, add the interface.
@@ -86,13 +87,13 @@ The same component template can be used repeatedly, as in the case of the _proje
 
 <a id="settingupservice"></a>
 ## Setting up Service
-Service provides the same set of functionality to any components. It is usually used to fetch data from API endpoints and then, supplied to components.
-1. Variable data (projects) only exist in porfolio component and cannot be accessed by other components. Hence, the need to set up a service.
-2. To create a service, go to folder _services_, open up a terminal and `ng g s projects --skip-tests`.
+Service provides the same set of functionality to any components. It is usually used to fetch data from API endpoints and then, supplied to components. In this case, Variable data (projects) only exist in porfolio component and cannot be accessed by other components. Hence, the need to set up a service.
+
+1. To create a service, go to folder _services_, open up a terminal and `ng g s projects --skip-tests`.
 - Different from a component; no associated HTML and CSS files. Class is an injectable.
-3. Go to _projects.service.ts_ to create database of projects and the accompanying methods.
-4. To use service, go to component, add in to constructor and implement Oninit interface.
-5. Edit the HTML file.
+2. Go to _projects.service.ts_ to create database of projects and the accompanying methods.
+3. To use service, go to component, add in to constructor and implement _Oninit_ interface.
+4. Edit the HTML file.
 
 <a id="addmodal"></a>
 ## Adding modal
@@ -101,7 +102,8 @@ Modal is a pop-up window that overlays on the side.
 2. Go to _project-card.component.ts_ to add the modal.
 3. Go to _project-card.component.html_ to add it as a click event.
 4. Create a project-modal component to hold the HTML for the modal. `ng g c project-modal --skip-tests`
-5. project-modal.component.ts to add BsModalRef, project-card.component.ts to add project modal component.
+5. Go to _project-modal.component.ts_ to add BsModalRef.
+6. Go to _project-card.component.ts_ to add project modal component.
 
 <a id="addcarousel"></a>
 ## Adding Carousel
@@ -109,7 +111,20 @@ Modal is a pop-up window that overlays on the side.
 
 <a id="addfilter"></a>
 ## Adding filters
-1. Go to _app.module.ts_ and add the carousel.
+(_To be filled in._)
+
+<a id="deploygithub"></a>
+## Deploying onto Github pages
+There are many ways to do this but for now, this works the best for me (with the least number of errors encountered.).
+
+Reference website: [(here)](https://www.linkedin.com/pulse/deploy-angular-app-github-pages-cli-dilakshan-antony-thevathas-octlc/)
+
+1. `ng build` to create the folder `dist`.
+2. Copy the contents in this folder into a new folder.
+3. Create a new repository for it.
+4. In _index.html_, change to `<base href="/<REPONAME>/">` and push all changes to the repo.
+5. Go to _Github_ > _Settings_ > _Pages_ > Under _Branch_, change to _main/root_ and save.
+6. Go to _Actions_ tab to check the deployment and you are done! (:
 
 <a id="codingtips"></a>
 ## Coding tips
@@ -119,6 +134,7 @@ Modal is a pop-up window that overlays on the side.
 
 <a id="troubleshoot"></a>
 ## Troubleshoot
+### During installation.
 
 1. **Error:** _\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system._
 - **Solution:** Go to `C:\Users\{user_name}\AppData\Roaming\npm`. Delete `ng.ps1`
@@ -134,8 +150,23 @@ Modal is a pop-up window that overlays on the side.
 
 5. `ng cache clean`
 
+During deployment on Github Pages.
+1. **Error:** _▲ [WARNING] bundle initial exceeded maximum budget. Budget 512.00 kB was not met by 208.10 kB with a total of 720.10 kB._
+- **Solution:** Go to _angular.json_, change `"budgets": [ ... "maximumWarning": 500kB, ...]`
+
+2. **Error:** _[WARNING] 2 rules skipped due to selector errors: .form-floating>~label -> Did not expect successive traversals._
+- **Solution:** Go to _angular.json_, add the following under `"configurations": {"production": {`, just before `"budgets":`.
+```
+"optimization": {
+              "scripts": true,
+              "styles": {
+                "minify": true,
+                "inlineCritical": false
+              }},
+````
+
 ---
-<a id="reflection"></a>
-## Reflection
+<a id="reflections"></a>
+## Reflections
 
 
