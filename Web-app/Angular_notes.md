@@ -1,5 +1,5 @@
 # Introduction
-These are my notes for following YouTube - Software Engineering Skills: Creating an Angular Portfolio.
+These are my notes for following [Software Engineering Skills: Creating an Angular Portfolio.](https://www.youtube.com/playlist?list=PLN0Th-4WgKrUVQlqa14mUDeymTW1luznW)
 
 Note that the versions I am using are:
 - Angular CLI: 18.1.3
@@ -124,7 +124,7 @@ Reference website: [(here)](https://www.linkedin.com/pulse/deploy-angular-app-gi
 3. Create a new repository for it.
 4. In _index.html_, change to `<base href="/<REPONAME>/">` and push all changes to the repo.
 5. Go to _Github_ > _Settings_ > _Pages_ > Under _Branch_, change to _main/root_ and save.
-6. Go to _Actions_ tab to check the deployment and you are done! (:
+6. Go to _Actions_ tab to check the deployment and you are done! \(:
 
 <a id="codingtips"></a>
 ## Coding tips
@@ -148,14 +148,16 @@ Reference website: [(here)](https://www.linkedin.com/pulse/deploy-angular-app-gi
 4. **Error:** _Error: Cannot resolve type entity i4.FocusTrapModule to symbol_
 - **Solution:** Go to _tsconfig.json_, change to `"compilerOptions": { ... "moduleResolution": "node", ... }`.
 
-5. `ng cache clean`
+5. **Error:** Page isn't loading properly.
+- **Solution:** `ng cache clean`
 
 During deployment on Github Pages.
 1. **Error:** _▲ [WARNING] bundle initial exceeded maximum budget. Budget 512.00 kB was not met by 208.10 kB with a total of 720.10 kB._
 - **Solution:** Go to _angular.json_, change `"budgets": [ ... "maximumWarning": 500kB, ...]`
 
 2. **Error:** _[WARNING] 2 rules skipped due to selector errors: .form-floating>~label -> Did not expect successive traversals._
-- **Solution:** Go to _angular.json_, add the following under `"configurations": {"production": {`, just before `"budgets":`.
+- **Solution:** Go to _angular.json_, add the following under `"configurations": {"production": {`, just before `"budgets":`. (Reference: [(here)](https://github.com/ng-bootstrap/ng-bootstrap/issues/4306))
+
 ```
 "optimization": {
               "scripts": true,
@@ -163,10 +165,21 @@ During deployment on Github Pages.
                 "minify": true,
                 "inlineCritical": false
               }},
-````
+  ````
+
+3. **Error:** (When using `ng deploy` method.) _The git repository has too many active changes, only a subset of Git features will be enabled. Would you like to add "node_modules" to .gitignore?_
+- **Solution:** _(Not found yet.)_
+
+4. **Error:** Images are not showing on Github Page.
+- **Solution:** Remove _/_ at the start of the image URLs.
 
 ---
 <a id="reflections"></a>
 ## Reflections
+I use YouTube extensively to understand my school materials and to develop automation scripts. However, this is the first time that I have used it to embark on such a massive project. And it has been challenging. Programmes are always being updated and so, one can't always follow to the tee. You need to find the equivalent in the new version but this is okay because usually these are documented. It is when you encounter errors and the troubleshooting process seems never-ending that it can get frustrating. (And sometimes, there really isn't a fix or a workaround!)
 
+I don't know if it was because I am familiar with HTML or that I have gone through the nightmare that is NUS CS5223 Distributed Systems and I feel like I can survive anything now, but I managed to fix all my errors, yay! I have documented them in the section just above and I hope it makes life a little easier for anyone else who encounters them. A huge thank you goes out to all the amazingly helpful people on the net.
 
+Also, my deployment of the Angular app to Github Pages isn't the most efficient way. But this seemed to be the only error-free one that I have found. I will keep searching for solutions in the meantime.
+
+This is starting to read like an Oscars speech but this whole project reminded me of the days when I tinkered with the HTML on my Blogspot blog fervently and some day, when I need a wee bit of encouragement, I think this will do it. \(:
